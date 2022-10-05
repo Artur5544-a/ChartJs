@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { ChartBar } from './Components/ChartBar/ChartBar';
+import { ChartLine } from './Components/ChartLine/ChartLine';
+import { ChartPie } from './Components/ChartPie/ChartPie';
+import { ChartRadar } from './Components/ChartRadar/ChartRadar';
+import { NavBar } from './Components/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <h1> Chart.js</h1>
+      <Routes>
+        <Route path='/ChartPie' element={<ChartPie />}/>
+        <Route path='/ChartLine' element={<ChartLine />}/>
+        <Route path='/ChartRadar' element={<ChartRadar/>}/>
+        <Route path='/ChartBar' element={<ChartBar/>}/>
+      </Routes>
+    
     </div>
   );
 }
